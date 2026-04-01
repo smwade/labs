@@ -14,7 +14,7 @@ const demos = [
 
 export default function Home() {
   return (
-    <div className="lab-grid flex flex-col flex-1">
+    <div className="flex flex-col flex-1">
       {/* Header */}
       <header className="w-full max-w-5xl mx-auto px-6 pt-16 pb-12 md:pt-24 md:pb-16">
         <div className="flex items-center gap-3 mb-3">
@@ -82,8 +82,8 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="w-full max-w-5xl mx-auto px-6 py-8 border-t border-border">
-        <div className="flex items-center justify-between text-xs text-muted">
+      <footer className="w-full border-t border-border">
+        <div className="max-w-5xl mx-auto px-6 py-8 flex items-center justify-between text-xs text-muted">
           <span className="font-mono tracking-wide">
             &copy; {new Date().getFullYear()} Sean Wade
           </span>
