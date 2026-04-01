@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+// Add new demos here
 const demos = [
   {
     id: "001",
