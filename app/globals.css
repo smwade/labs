@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f1117;
+  --foreground: #e2e8f0;
+  --card: #1e2130;
+  --border: #2d3148;
+  --muted: #64748b;
+  --accent: #818cf8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Subtle grid background */
+.lab-grid {
+  background-image:
+    linear-gradient(rgba(45, 49, 72, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(45, 49, 72, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: center center;
+}
+
+/* Card glow on hover */
+.lab-card {
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.lab-card:hover {
+  border-color: rgba(129, 140, 248, 0.4);
+  box-shadow: 0 0 20px rgba(129, 140, 248, 0.08), inset 0 1px 0 rgba(129, 140, 248, 0.06);
+  transform: translateY(-2px);
+}
+
+/* Tag pill */
+.lab-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  background: rgba(129, 140, 248, 0.08);
+  color: var(--muted);
+  border: 1px solid rgba(129, 140, 248, 0.12);
+  transition: color 0.3s ease, border-color 0.3s ease;
+  font-family: var(--font-geist-mono);
+}
+.lab-card:hover .lab-tag {
+  color: var(--accent);
+  border-color: rgba(129, 140, 248, 0.25);
+}
+
+/* Arrow indicator */
+.lab-arrow {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.lab-card:hover .lab-arrow {
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* Experiment number badge */
+.lab-number {
+  font-family: var(--font-geist-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: rgba(129, 140, 248, 0.35);
+  text-transform: uppercase;
+}
+.lab-card:hover .lab-number {
+  color: rgba(129, 140, 248, 0.6);
+}
+
+/* Staggered card entrance */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.lab-card {
+  animation: card-in 0.5s ease both;
+}
+
+/* Header pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 1; }
+}
+.pulse-dot {
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
