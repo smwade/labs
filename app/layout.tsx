@@ -1,4 +1,3 @@
-import Script from "next/script";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -31,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="min-h-screen flex flex-col">{children}<Script src="https://collect.ordinaryrocket.com/basic.js" data-website-id="959599d3-3632-4ce2-b119-46a36055d6ff" strategy="afterInteractive" /></body>
+      <body className="min-h-screen flex flex-col">{children}</body>
     </html>
   );
 }
